@@ -1,4 +1,60 @@
-.body {
-    background-color: aquamarine;
-    color: darkslategray;
+h1 {
+  text-align: left;
+  font-size: 2em;
+  color: #000000;
+  font-weight: normal;
 }
+
+p {
+  font-size: 1.1em;
+}
+
+/*author: chantal*/
+body {
+  background-color:	#ffffcc;
+}
+
+.impressum {
+  margin-top: 3em;
+}
+
+/*Ende author: chantal*/
+
+footer {
+  font-size: 1.5vw;
+  background-color: white;
+}
+
+
+/* Author: Stéphnae */
+
+#introductionTitle {
+  padding-top: 35px;
+}
+
+#introductionWording {
+  padding-top: 25px;
+  padding-bottom: 20px;
+}
+
+#questionTitle {
+  padding-top: 40px;
+  padding-bottom: 10px;
+}
+
+#questionWording {
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+#answerPanel {
+  padding-top: 30px;
+
+}
+
+.buttons {
+  margin-top: 25px;
+  font-size: 3em;;
+  border-radius: 0.25em;
+}
+
