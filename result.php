@@ -1,4 +1,11 @@
-<!-- ruslan-->
+ <?php include "includes/data-collector.php"; ?>
+
+        
+<?php include "includes/evaluate.php";  ?>
+
+   
+   
+  <!-- ruslan-->
 
 <?php include "includes/head.php"; ?>
 
@@ -9,20 +16,14 @@
     <div>
          
     </div>   
-    <!-- Hier kommt noch der Data-Collector-->
-    <?php
-
-        include "includes/data-collector.php";
-        include "includes/evaluate.php";
-
-    ?>
+  
     <div>
         <div class="container-fluid bg-warning text-dark mt-3">
             <div class="container">
                 <div class="row">
                     <div class="col-1"></div>
                     <div class="col-10">
-                        <h1 id="questionTitle">Dein Ergebnis:</h1>
+                        <h2 id="questionTitle">Dein Ergebnis:</h2>
                     <?php
                    
                         printResult();
@@ -57,8 +58,8 @@
                                 <input type="hidden" name="lastPageID" value="result">
                                 <p id="validation-warning" class="warning"></p>
                                 
-                               
-                                <a class="btn btn-outline-primary" href="index.php" role="button">Restart</a>
+                                <a class="btn btn-outline-danger buttons" href="question-01.php" role="button">< Zurück</a>
+                                <a class="btn btn-outline-primary buttons" href="index.php" role="button">Restart</a>
                                 
                                 </div>
                             </div>

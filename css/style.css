@@ -1,6 +1,7 @@
 h1 {
+
   text-align: left;
-  font-size: 2em;
+  font-size: 2.5em;
   color: #000000;
   font-weight: normal;
 }
@@ -9,16 +10,17 @@ p {
   font-size: 1.1em;
 }
 
-/*author: chantal*/
+
 body {
   background-color:	#ffffcc;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .impressum {
   margin-top: 3em;
 }
 
-/*Ende author: chantal*/
+
 
 footer {
   font-size: 1.5vw;
@@ -26,7 +28,7 @@ footer {
 }
 
 
-/* Author: Stéphnae */
+
 
 #introductionTitle {
   padding-top: 35px;
@@ -43,6 +45,7 @@ footer {
 }
 
 #questionWording {
+  font-size: 1.5em;
   padding-top: 10px;
   padding-bottom: 30px;
 }
@@ -58,3 +61,14 @@ footer {
   border-radius: 0.25em;
 }
 
+#validation-warning {
+  font-size: 2em;
+  color:darkred;
+
+}
+
+.form-check-label {
+  font-size: 1.0em;
+  color: mediumblue;
+
+}

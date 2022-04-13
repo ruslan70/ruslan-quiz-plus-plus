@@ -1,4 +1,5 @@
 <?php include "includes/data-collector.php";?>
+<?php include "includes/select.php"; ?>
 <?php include "includes/head.php"; ?>
 
 <?php include "includes/header.php";?>
@@ -62,7 +63,8 @@
                                     <input type="hidden" name="lastPageID" value="question-01">
                                     <input type="hidden" id="achievedPoints" name="achievedPoints">
                                     <p id="validation-warning" class="warning"></p>
-                                   <button type="submit" class="btn btn-outline-danger buttons">Weiter</button>
+                                    <a class="btn btn-outline-danger buttons" href="index.php" role="button">< Zurück</a>
+                                   <button type="submit" class="btn btn-outline-danger buttons">Weiter ></button>
                                 </div>
                             </div>
                             <div class="col-1"></div>

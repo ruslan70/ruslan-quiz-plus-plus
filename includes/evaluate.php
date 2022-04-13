@@ -1,21 +1,21 @@
 <?php
 
-printResult();
+// printResult();
 
 function printResult() {
     
     $totalPoints = evaluateQuestions();
     
    if ($totalPoints < 9) {
-        echo "<h3>" . "Du musst noch viel nachholen..." . "</h3>";
+        echo "<h2>" . "Du musst noch viel nachholen..." . "</h2>";
 
     }
     elseif ($totalPoints < 13) {
-        echo "<h3>" . "Gut, Du weisst schon viel!" . "</h3>";
+        echo "<h2>" . "Gut, Du weisst schon viel!" . "</h2>";
  
     }
     elseif ($totalPoints > 13) {
-        echo "<h3>Super! Bist du aus der Schweiz?</h3>";
+        echo "<h2>Super! Bist du aus der Schweiz?</h2>";
 
     }
 }
@@ -41,9 +41,9 @@ function evaluateQuestions() {
         "question-15"
     ];
 
-    echo "<pre>";
+    /*echo "<pre>";
     print_r($_SESSION);
-    echo "</pre>";
+    echo "</pre>"; */
     
     $totalPoints = 0;
     $pageNum = count($questionPageNames);
@@ -64,7 +64,7 @@ function evaluateQuestions() {
     
     // DEVONLY
     
-     echo "TotalPoints = $totalPoints<br>";
+    // echo "TotalPoints = $totalPoints<br>";
   
 
     return $totalPoints;
