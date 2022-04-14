@@ -2,7 +2,7 @@
       session_destroy(); //um den cache zu leeren  
         
 ?>     
-<?php include "includes/select.php"; ?>
+
 
 <?php include "includes/head.php"; ?>
 
