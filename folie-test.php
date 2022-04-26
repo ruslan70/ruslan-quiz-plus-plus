@@ -27,9 +27,9 @@
 
     <?php
     for ($a = 0; $a < count($answers); $a++)  {
-        $answer = $answsers[$q];
-        echo   ;
+       
+        echo 
 
     }
-    
+
     ?>

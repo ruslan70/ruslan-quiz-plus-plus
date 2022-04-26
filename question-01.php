@@ -36,54 +36,32 @@
                 <div class="row">
                     <div class="col-1"></div>
                     <div class="col-10" id="answerPanel">
-                        <div class="form-check">
-                            <input type="radio" class="form-check-input" id="single-choice-1" name="single-choice" value="1">
-                            <label class="form-check-label" for="single-choice-1">
-                                <?php 
-                                    $answers = $questions[$currentQuestionIndex ]['QuizAnswers'];
-                                    $answer = $answers[0];
-                                    echo $answer['Text'];
-                                ?>
-                            </label>
-                        </div>
+                        <?php
+                            $answers = $questions[$currentQuestionIndex ]['QuizAnswers'];
+
+                            for ($a = 0; $a < count($answers); $a++)  {
+                                echo '<div class="form-check">';
+                                
+                                $IsCorrectAnswer = $answers[$a]['IsCorrectAnswer'];
+                                echo '<input type="radio" class="form-check-input" id="single-choice-1" name="single-choice" value="' . $IsCorrectAnswer . '">';
+                                echo '<label class="form-check-label" for="single-choice-1">';
+                                                                    
+                                $answers = $questions[$currentQuestionIndex ]['QuizAnswers'];
+                                echo $answers[$a]['Text'];
+                                                                    
+                                                                    
+                                echo '</label>';
+                                echo '</div>';
+
+                            }                               
+                                
+
+                        ?>
+                        
                            
 
                         
-                        <div class="form-check">
-                            <input type="radio" class="form-check-input" id="single-choice-2"name="single-choice" value="0">
-                            <label class="form-check-label" for="single-choice-2">
-                                <?php 
-                                    $answers = $questions[$currentQuestionIndex ]['QuizAnswers'];
-                                    $answer = $answers[1];
-                                    echo $answer['Text'];
-                                ?>
-                            </label>
-                        </div>
-                            
-
                         
-                        <div class="form-check">
-                            <input type="radio" class="form-check-input" id="single-choice-3" name="single-choice" value="0">
-                            <label class="form-check-label" for="single-choice-3">
-                                <?php 
-                                    $answers = $questions[$currentQuestionIndex ]['QuizAnswers'];
-                                    echo $answers[2]['Text'];
-                                ?>
-                            </label>
-
-                        </div> 
-
-                        
-                        <div class="form-check">
-                            <input type="radio" class="form-check-input" id="single-choice-4" name="single-choice" value="0">
-                            <label class="form-check-label" for="single-choice-4">
-                                <?php 
-                                    $answers = $questions[$currentQuestionIndex ]['QuizAnswers'];
-                                    echo $answers[3]['Text'];
-                                ?>
-                            </label>
-
-                        </div>  
 
                         
                         </div> 
