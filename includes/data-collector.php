@@ -1,6 +1,6 @@
-<?php
-// Muss vor dem Gebrauch von $_SESSION ausgeführt werden.
-session_start();
+<?php session_start();   // Muss vor dem Gebrauch von $_SESSION ausgeführt werden.
+                            
+
 
 // Hole den Namen der letzten Seite aus $_POST.
 

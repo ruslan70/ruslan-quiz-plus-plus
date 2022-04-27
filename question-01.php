@@ -32,21 +32,30 @@
             </div>
         </div>
         <div class="container">
-            <form method="post" onsubmit="return validateQuestion();">       
+            <form <?php if  ($currentQuestionIndex +1 == count($questions)) echo 'action="result.php" '; ?> method="post">       
                 <div class="row">
                     <div class="col-1"></div>
                     <div class="col-10" id="answerPanel">
                         <?php
                             $answers = $questions[$currentQuestionIndex ]['QuizAnswers'];
+                            $Type = $questions[$currentQuestionIndex ]['Type'];
 
                             for ($a = 0; $a < count($answers); $a++)  {
                                 echo '<div class="form-check">';
                                 
                                 $IsCorrectAnswer = $answers[$a]['IsCorrectAnswer'];
-                                echo '<input type="radio" class="form-check-input" id="single-choice-1" name="single-choice" value="' . $IsCorrectAnswer . '">';
-                                echo '<label class="form-check-label" for="single-choice-1">';
+                                if ($Type == "MultiChoice") {
+                                    // Multiple Choice (checkbox).
+                                    echo '<input type="checkbox" class="form-check-input" id="i-' . $a . '" name="a-' . $a . '" value="' . $IsCorrectAnswer . '">';
+                                }
+                                else {
+        
+                                    // Single Choice (radio)
+                                    echo '<input type="radio" class="form-check-input" id="i-' . $a . '" name="a-0" value="' . $IsCorrectAnswer . '">';
+                                }   
+                                echo '<label class="form-check-label" for="i-' . $a . '">';
                                                                     
-                                $answers = $questions[$currentQuestionIndex ]['QuizAnswers'];
+                               
                                 echo $answers[$a]['Text'];
                                                                     
                                                                     
@@ -58,11 +67,6 @@
 
                         ?>
                         
-                           
-
-                        
-                        
-
                         
                         </div> 
                         <div class="col-1"></div>
@@ -75,9 +79,10 @@
                                    <!-- <input type="hidden" name="lastPageID" value="question-01">
                                     <input type="hidden" id="achievedPoints" name="achievedPoints">
                                     <p id="validation-warning" class="warning"></p>-->
-                                    <!-- Hideb Fields for update from lastPage to nextPage  -->
+                                    <!-- Hiden Fields for update from lastPage to nextPage  -->
                                     <input type="hidden" name="lastQuestionIndex" value="<?php echo $currentQuestionIndex; ?>">
                                     <input type="hidden" name="nextQuestionIndex" value="<?php echo $currentQuestionIndex +1; ?>">
+                                    
                                     <!-- End of the  update from lastPage to nextPage  -->
                                     <a class="btn btn-outline-danger buttons" href="index.php" role="button">< Zurück</a>
                                    <button type="submit" class="btn btn-outline-danger buttons">Weiter ></button>
