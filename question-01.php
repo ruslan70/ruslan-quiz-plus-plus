@@ -1,5 +1,7 @@
 <?php include "includes/data-collector.php";?>
+
 <?php include "includes/select.php"; ?>
+
 <?php include "includes/head.php"; ?>
 
 <?php include "includes/header.php";?>
@@ -39,6 +41,7 @@
                         <?php
                             $answers = $questions[$currentQuestionIndex ]['QuizAnswers'];
                             $Type = $questions[$currentQuestionIndex ]['Type'];
+                            $maxPoints = 0;
 
                             for ($a = 0; $a < count($answers); $a++)  {
                                 echo '<div class="form-check">';
@@ -53,12 +56,13 @@
                                     // Single Choice (radio)
                                     echo '<input type="radio" class="form-check-input" id="i-' . $a . '" name="a-0" value="' . $IsCorrectAnswer . '">';
                                 }   
+                                
+                                $maxPoints += $IsCorrectAnswer; // same as : $maxPoints = $maxPoints + $IsCorrectAnswer;
+                                                                    
+                                
+                                                                    
                                 echo '<label class="form-check-label" for="i-' . $a . '">';
-                                                                    
-                               
-                                echo $answers[$a]['Text'];
-                                                                    
-                                                                    
+                                echo $answers[$a]['Text'];                                    
                                 echo '</label>';
                                 echo '</div>';
 
@@ -82,7 +86,7 @@
                                     <!-- Hiden Fields for update from lastPage to nextPage  -->
                                     <input type="hidden" name="lastQuestionIndex" value="<?php echo $currentQuestionIndex; ?>">
                                     <input type="hidden" name="nextQuestionIndex" value="<?php echo $currentQuestionIndex +1; ?>">
-                                    
+                                    <input type="hidden" name="maxPoints" value="<?php echo $maxPoints; ?>">
                                     <!-- End of the  update from lastPage to nextPage  -->
                                     <a class="btn btn-outline-danger buttons" href="index.php" role="button">< Zurück</a>
                                    <button type="submit" class="btn btn-outline-danger buttons">Weiter ></button>

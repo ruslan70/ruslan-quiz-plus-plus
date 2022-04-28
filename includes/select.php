@@ -51,7 +51,7 @@ function getQuestions() {
 $questions = getQuestions();
 
 
-    $centurrQuestionIndex = 0;
+    $currentQuestionIndex = 0;
 
     if (isset($_POST['lastQuestionIndex'])) {
         // get data from last post.
