@@ -1,15 +1,6 @@
- <?php include "includes/data-collector.php"; ?>
-
-        
-
-
-   
-   
-  <!-- ruslan-->
-
+<?php include "includes/data-collector.php"; ?>
 <?php include "includes/head.php"; ?>
-
-<?php include "includes/header.php";?>
+<?php include "includes/header.php";?>       
 
 <?php 
     // get the lists with the achieved and maximum points (listed per question).

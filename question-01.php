@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="container">
-            <form <?php if  ($currentQuestionIndex +1 == count($questions)) echo 'action="result.php" '; ?> method="post">       
+            <form <?php if  ($currentQuestionIndex +1 >= count($questions)) echo 'action="result.php" '; ?> method="post">       
                 <div class="row">
                     <div class="col-1"></div>
                     <div class="col-10" id="answerPanel">
@@ -45,16 +45,16 @@
 
                             for ($a = 0; $a < count($answers); $a++)  {
                                 echo '<div class="form-check">';
-                                
                                 $IsCorrectAnswer = $answers[$a]['IsCorrectAnswer'];
+                                
                                 if ($Type == "MultiChoice") {
                                     // Multiple Choice (checkbox).
-                                    echo '<input type="checkbox" class="form-check-input" id="i-' . $a . '" name="a-' . $a . '" value="' . $IsCorrectAnswer . '">';
+                                    echo '<input class="form-check-input" type="checkbox"  id="i-' . $a . '" name="a-' . $a . '" value="' . $IsCorrectAnswer . '">';
                                 }
                                 else {
         
                                     // Single Choice (radio)
-                                    echo '<input type="radio" class="form-check-input" id="i-' . $a . '" name="a-0" value="' . $IsCorrectAnswer . '">';
+                                    echo '<input class="form-check-input" type="radio"  id="i-' . $a . '" name="a-0" value="' . $IsCorrectAnswer . '">';
                                 }   
                                 
                                 $maxPoints += $IsCorrectAnswer; // same as : $maxPoints = $maxPoints + $IsCorrectAnswer;

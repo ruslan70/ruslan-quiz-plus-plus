@@ -26,7 +26,7 @@ if (isset($_POST['lastQuestionIndex'])) {
         }
     }
 
-     DEVONLY: 
+     // DEVONLY: 
      echo "achievedPoints =$achievedPoints<br>";
 
     // make sure the list of all achieved points exists in the $_SESSION.
@@ -63,9 +63,9 @@ if (isset($_POST['lastQuestionIndex'])) {
 
 
 // DEVONLY: Gib die aktuelle $_SESSION in die Seite aus.
-/*
+
     echo '<pre>';
     print_r($_SESSION);
     echo '</pre>'; 
-*/
+
 ?>

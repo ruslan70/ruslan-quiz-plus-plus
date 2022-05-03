@@ -87,10 +87,10 @@ $_SESSION['questions'] = $questions;
 
 
 // DEVONLY: Debug output to see what is inside the array $question.
-echo "<pre>";
+/*echo "<pre>";
 print_r($_SESSION['questions']);
 echo "</pre>";
-
+*/
 
 
 
