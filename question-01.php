@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="container">
-            <form <?php if  ($currentQuestionIndex +1 >= count($questions)) echo 'action="result.php" '; ?> method="post">       
+            <form <?php if  ($currentQuestionIndex +1 >= count($questions)) echo 'action="result.php" '; ?> id= "questionForm" method="post">       
                 <div class="row">
                     <div class="col-1"></div>
                     <div class="col-10" id="answerPanel">
@@ -88,11 +88,32 @@
                                     <input type="hidden" name="nextQuestionIndex" value="<?php echo $currentQuestionIndex +1; ?>">
                                     <input type="hidden" name="maxPoints" value="<?php echo $maxPoints; ?>">
                                     <!-- End of the  update from lastPage to nextPage  -->
-                                    <a class="btn btn-outline-danger buttons" href="index.php" role="button">< Zurück</a>
-                                   <button type="submit" class="btn btn-outline-danger buttons">Weiter ></button>
+                                    <input type="submit" onclick="return previousQuestion();" class="btn btn-outline-danger buttons" value="Zurück">
+                                    <button type="submit" class="btn btn-outline-danger buttons">Weiter ></button>
                                 </div>
                             </div>
                             <div class="col-1"></div>
+                            <script>
+
+                                function previousQuestion() {
+                                    // Calculate previous question index.
+                                    let element1 = document.getElementById("lastQuestionIndex");
+                                    let previousQuestionIndex = parseInt(element1.value) -1;
+                                    if (previousQuestionIndex < 0) previousQuestionIndex = 0;
+
+                                    // Set the nextQuestionIndex to the previous question.
+                                    let element2 = document.getElementbyId("nextQuestionIndex");
+                                    element2.value = previousQuestionIndex;
+
+                                    /*
+                                        Remove the action from Form - otherwise submitting will
+                                        interfere and we land on the result.php,
+                                        instead of the previous page.
+                                    */
+                                   let element3 = document.getElementById("questionForm");
+                                   element3.action = '';
+                                }
+                            </script>
                         </div>
                     </div>
                 </div>
