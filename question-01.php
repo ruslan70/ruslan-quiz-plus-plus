@@ -98,6 +98,7 @@
                 </div>
             </form>
             <script>
+                // Ersetelle eine Funktion, die für Zurück Taste veranwortlich ist
                 function previousQuestion() {
                     // Calculate previous question index.
                     let element1 = document.getElementById("lastQuestionIndex");

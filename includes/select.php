@@ -65,7 +65,7 @@ $questions = getQuestions();
 
 // check if $_SESSION['questions'] exists.
 if (isset($_SESSION['questions'])) {
-echo 'questions data EXISTS in session.<br>';
+// echo 'questions data EXISTS in session.<br>';
     $questions = $_SESSION['questions'];
 
 
