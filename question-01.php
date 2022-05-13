@@ -13,7 +13,7 @@
                 <div class="col-1"></div>
                 <div class="col-10">
                     <div class="progress">
-                    <div class="progress-bar" style="width:7%">7%</div>
+                    <!-- <div class="progress-bar" style="width:7%">7%</div> -->
                 </div>
                 <div class="col-1"></div>
             </div>
